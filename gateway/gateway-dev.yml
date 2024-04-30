@@ -9,3 +9,12 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://localhost:8090/eureka/
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: DIARY_SERVICE
+          uri: lb://backend
+          predicates:
+            - Path=/diary/**
+ 
