@@ -18,3 +18,8 @@ spring:
           predicates:
             - Path=/diary/**
  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
