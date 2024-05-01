@@ -14,9 +14,10 @@ spring:
     gateway:
       discovery.locator:
         lowerCaseServiceId: true
+        enabled: true
       routes:
-        - id: DIARY_SERVICE
-          uri: lb://BACKEND
+        - id: diary-service
+          uri: lb://backend
           predicates:
             - Path=/diary/**
  
