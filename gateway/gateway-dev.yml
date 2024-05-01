@@ -12,6 +12,8 @@ eureka:
 spring:
   cloud:
     gateway:
+      discovery.locator:
+        lowerCaseServiceId: true
       routes:
         - id: DIARY_SERVICE
           uri: lb://backend
