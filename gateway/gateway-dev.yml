@@ -16,7 +16,7 @@ spring:
         lowerCaseServiceId: true
       routes:
         - id: DIARY_SERVICE
-          uri: lb://backend
+          uri: lb://BACKEND
           predicates:
             - Path=/diary/**
  
