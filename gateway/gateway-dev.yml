@@ -20,6 +20,8 @@ spring:
           uri: lb://BACKEND
           predicates:
             - Path=/diary/**
+          filters:
+            - RewritePath=/diary/(?<path>.*), /$\{path}
  
 management:
   endpoints:
