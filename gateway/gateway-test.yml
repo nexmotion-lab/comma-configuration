@@ -1,0 +1,30 @@
+server:
+  port: 8081
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8090/eureka/
+spring:
+  cloud:
+    gateway:
+      discovery.locator:
+        lowerCaseServiceId: true
+        enabled: true
+      routes:
+        - id: diary-service
+          uri: lb://BACKEND
+          predicates:
+            - Path=/diary/**
+          filters:
+            - RewritePath=/diary/(?<path>.*), /$\{path}
+ 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
