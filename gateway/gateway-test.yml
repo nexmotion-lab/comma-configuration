@@ -22,6 +22,7 @@ spring:
             - Path=/diary/**
           filters:
             - RewritePath=/diary/(?<path>.*), /$\{path}
+            - name: AddAuthInfoGatewayFilter
  
 management:
   endpoints:
