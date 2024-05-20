@@ -22,7 +22,7 @@ spring:
             - Path=/diary/**
           filters:
             - RewritePath=/diary/(?<path>.*), /$\{path}
-            - name: AddAuthInfo
+            - AddAuthInfo
  
 management:
   endpoints:
