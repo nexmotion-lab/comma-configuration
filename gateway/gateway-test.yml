@@ -28,7 +28,6 @@ spring:
           uri: lb://AUTHENTICATION
           predicates:
             - Path=/login
-            - Path=/oauth2/**
     
 management:
   endpoints:
