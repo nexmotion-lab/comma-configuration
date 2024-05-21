@@ -23,6 +23,7 @@ spring:
           filters:
             - RewritePath=/api/diary/(?<path>.*), /$\{path}
             - AddAuthInfo
+            
         - id: authentication
           uri: lb://AUTHENTICATION
           predicates:
