@@ -27,9 +27,7 @@ spring:
           uri: lb://AUTHENTICATION
           predicates:
             - Path=/login
-          filters:
-            - RewritePath=/login, /login
- 
+    
 management:
   endpoints:
     web:
