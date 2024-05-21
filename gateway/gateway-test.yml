@@ -28,7 +28,7 @@ spring:
           predicates:
             - Path=/login
           filters:
-            - RewritePath=/diary/(?<path>.*), /$\{path}
+            - RewritePath=/login, /login
  
 management:
   endpoints:
