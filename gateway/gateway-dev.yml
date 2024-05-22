@@ -22,6 +22,16 @@ spring:
             - Path=/diary/**
           filters:
             - RewritePath=/diary/(?<path>.*), /$\{path}
+
+        - id: authentication
+          uri: lb://AUTHENTICATION
+          predicates:
+            - Path=/login
+            
+        - id: oauth
+          uri: lb://AUTHENTICATION
+          predicates:
+            - Path=/oauth2/**
  
 management:
   endpoints:
