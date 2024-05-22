@@ -6,6 +6,12 @@ jwt:
   refresh:
     expiration: 1209600000
     header: Authorization-refresh
+    
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
+    javax.net.ssl: DEBUG
 
 spring:
   security:
