@@ -31,12 +31,6 @@ spring:
           filters:
             - RewritePath=/login/(?<path>.*), /${path}
             
-        - id: oauth
-          uri: lb://AUTHENTICATION
-          predicates:
-            - Path=/oauth2/**
-          filters:
-            - RewritePath=/oauth2/(?<path>.*), /${path}
     
 management:
   endpoints:
