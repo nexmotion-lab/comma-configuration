@@ -7,12 +7,6 @@ jwt:
     expiration: 1209600000
     header: Authorization-refresh
 
-logging:
-  level:
-    root: DEBUG
-    org.springframework.web.client.RestTemplate: DEBUG
-    org.springframework.security: DEBUG
-
 spring:
   security:
     oauth2:
