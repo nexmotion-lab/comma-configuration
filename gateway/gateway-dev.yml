@@ -33,6 +33,11 @@ spring:
           uri: lb://AUTHENTICATION
           predicates:
             - Path=/oauth2/**
+
+        - id: kakao-oauth
+          uri: https://kauth.kakao.com
+          predicates:
+            - Path=https://kauth.kakao.com/**
  
 management:
   endpoints:
