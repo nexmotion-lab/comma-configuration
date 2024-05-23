@@ -16,20 +16,20 @@ spring:
         lowerCaseServiceId: true
         enabled: true
       routes:
-      
         - id: diary-service
           uri: lb://BACKEND
           predicates:
-            - Path=/diary/**
+            - Path=/api/diary/**
           filters:
-            - RewritePath=/diary/(?<path>.*), /$\{path}
-
+            - RewritePath=/api/diary/(?<path>.*), /$\{path}
+            - AddAuthInfo
+            
         - id: authentication
           uri: lb://AUTHENTICATION
           predicates:
             - Path=/login/**
             
-        - id: oauth
+        - id: authentication-oauth
           uri: lb://AUTHENTICATION
           predicates:
             - Path=/oauth2/**
