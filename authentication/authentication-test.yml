@@ -15,13 +15,13 @@ spring:
           google:
             client-id: 659320077987-m8nsjkbks7fq3eb567677k7kjiadmd2c.apps.googleusercontent.com
             client-secret: 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
-            redirectUri: "{baseUrl}/login/oauth2/code/google"
+            redirectUri: http://localhost/login/oauth2/code/google
             scope: profile, email
 
           naver:
             client-id: t1WG_3zkBREXTv4KBkR8
             client-secret: xhCWrTXIS8
-            redirect-uri: http://localhost:8081/login/oauth2/code/naver
+            redirect-uri: http://localhost1/login/oauth2/code/naver
             authorization-grant-type: authorization_code
             scope: name, email, gender, birthday, birthyear
             client-name: Naver
