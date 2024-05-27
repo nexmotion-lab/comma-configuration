@@ -34,10 +34,12 @@ spring:
           predicates:
             - Path=/oauth2/**
 
-        - id: kakao-oauth
-          uri: https://kauth.kakao.com
+        - id: pront
+          uri: http://front:80
           predicates:
-            - Path=https://kauth.kakao.com/**
+            -Path=/home
+          filters:
+            - RewritePath=/home/(?<path>.*), /$\{path}
  
 management:
   endpoints:
