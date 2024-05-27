@@ -37,7 +37,7 @@ spring:
         - id: pront
           uri: http://front:80
           predicates:
-            -Path=/home
+            - Path=/home/**
           filters:
             - RewritePath=/home/(?<path>.*), /$\{path}
  
