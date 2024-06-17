@@ -16,12 +16,12 @@ spring:
         lowerCaseServiceId: true
         enabled: true
       routes:
-        - id: diary-service
+        - id: psytest-service
           uri: lb://BACKEND
           predicates:
-            - Path=/api/diary/**
+            - Path=/api/psytest/**
           filters:
-            - RewritePath=/api/diary/(?<path>.*), /$\{path}
+            - RewritePath=/api/pshytest/(?<path>.*), /$\{path}
             - AddAuthInfo
             
         - id: authentication
@@ -34,12 +34,13 @@ spring:
           predicates:
             - Path=/oauth2/**
 
-        - id: pront
-          uri: http://front:80
+        - id: diary-service
+          uri: lb://DIARY-SERVICE
           predicates:
-            - Path=/home/**
+            - Path=/api/diary/**
           filters:
-            - RewritePath=/home/(?<path>.*), /$\{path}
+            - RewritePath=/api/diary/(?<path>.*), /$\{path}
+            - AddAuthInfo
  
 management:
   endpoints:
