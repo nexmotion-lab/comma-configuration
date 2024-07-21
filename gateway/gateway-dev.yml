@@ -19,9 +19,9 @@ spring:
         - id: psytest-service
           uri: lb://BACKEND
           predicates:
-            - Path=/api/psytest/**
+            - Path=/api/psy/**
           filters:
-            - RewritePath=/api/pshytest/(?<path>.*), /$\{path}
+            - RewritePath=/(?<path>.*), /$\{path}
             - AddAuthInfo
             
         - id: authentication
@@ -39,7 +39,7 @@ spring:
           predicates:
             - Path=/api/diary/**
           filters:
-            - RewritePath=/api/diary/(?<path>.*), /$\{path}
+            - RewritePath=/(?<path>.*), /$\{path}
             - AddAuthInfo
  
 management:
