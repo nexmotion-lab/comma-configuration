@@ -27,8 +27,8 @@ spring:
         - id: authentication
           uri: lb://AUTHENTICATION
           predicates:
-            - Path=/login/**, /oauth2/**, /api/account/**,
-            - RewritePath=^/api/account/(?<path>.*), /api/v1/$\{path}
+            - Path=/login/**, /oauth2/**, /account/**,
+            - RewritePath=^/account/(?<path>.*), /account/$\{path}
 
         - id: diary-service
           uri: lb://DIARY-SERVICE
