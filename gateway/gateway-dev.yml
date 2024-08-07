@@ -36,10 +36,10 @@ spring:
         - id: authentication-account
           uri: lb://AUTHENTICATION
           predicates:
-            - Path=/account/**
+            - Path=/api/account/**
           filters:
             - AddAuthInfo
-            - RewritePath=^/account/(?<path>.*), /account/$\{path}
+            - RewritePath=^/api/account/(?<path>.*), /account/$\{path}
 
         - id: diary-service
           uri: lb://DIARY-SERVICE
