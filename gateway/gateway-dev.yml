@@ -38,7 +38,7 @@ spring:
           predicates:
             - Path=/token/resend
           filters:
-            - RewritePath=^/token/resend/, /account/token/resend
+            - RewritePath=/token/resend/, /account/token/resend
 
         - id: authentication-account
           uri: lb://AUTHENTICATION
