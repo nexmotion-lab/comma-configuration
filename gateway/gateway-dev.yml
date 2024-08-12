@@ -33,6 +33,13 @@ spring:
           predicates:
             - Path=/login/**, /oauth2/**
 
+        - id: authentication-resend-token
+          uri: lb://AUTHENTICATION
+          predicates:
+            - Path=/token/resend
+          filters:
+            - RewritePath=^/token/resend/, /account/token/resend
+
         - id: authentication-account
           uri: lb://AUTHENTICATION
           predicates:
