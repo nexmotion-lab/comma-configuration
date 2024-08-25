@@ -1,9 +1,5 @@
 server:
   port: 8081
-  ssl:
-    key-store: ./keystore.p12
-    key-store-password: sunwoo123
-    key-store-type: PKCS12
 
 eureka:
   instance:
@@ -12,7 +8,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://localhost:8090/eureka/
+      defaultZone: http://eureka:8090/eureka/
 spring:
   cloud:
     gateway:
@@ -31,12 +27,22 @@ spring:
         - id: authentication
           uri: lb://AUTHENTICATION
           predicates:
-            - Path=/login/**
-            
-        - id: authentication-oauth
+            - Path=/login/**, /oauth2/**
+
+        - id: authentication-resend-token
           uri: lb://AUTHENTICATION
           predicates:
-            - Path=/oauth2/**
+            - Path=/token/resend
+          filters:
+            - RewritePath=/token/resend/, /account/token/resend
+
+        - id: authentication-account
+          uri: lb://AUTHENTICATION
+          predicates:
+            - Path=/api/account/**
+          filters:
+            - AddAuthInfo
+            - RewritePath=^/api/account/(?<path>.*), /account/$\{path}
 
         - id: diary-service
           uri: lb://DIARY-SERVICE
@@ -51,3 +57,41 @@ management:
     web:
       exposure:
         include: "*"
+
+security:
+  roles:
+    user:
+      paths:
+        - /api/psy/**
+        - /api/diary/**
+    admin:
+      paths:
+        - /api/account/**
+        - /api/diary/**
+        - /api/psy/**
+  pathMatchers:
+    permitAll:
+      - /login/**
+      - /oauth2/**
+      - /token/resend
+
+cors:
+  allowed-origins:
+    - "http://localhost:8100"
+    - "https://localhost"
+    - "http://192.168.0.92:8100"
+    - "http://172.29.11.2:8100"
+  allowed-methods:
+    - "GET"
+    - "POST"
+    - "PUT"
+    - "PATCH"
+    - "DELETE"
+    - "OPTIONS"
+  allowed-headers:
+    - "*"
+  allow-credentials: true
+  exposed-headers:
+    - "Authorization"
+  max-age: 3600
+
