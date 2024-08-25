@@ -74,7 +74,6 @@ security:
       - /login/**
       - /oauth2/**
       - /token/resend
-      - /actuator/**
 
 cors:
   allowed-origins:
