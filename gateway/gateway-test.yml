@@ -66,32 +66,31 @@ security:
         - /api/diary/**
     admin:
       paths:
-        - /api/account/**
-        - /api/diary/**
-        - /api/psy/**
+        - /actuator/**
   pathMatchers:
     permitAll:
       - /login/**
       - /oauth2/**
       - /token/resend
+   
 
 cors:
   allowed-origins:
-    - "http://localhost:8100"
-    - "https://localhost"
-    - "http://192.168.0.92:8100"
-    - "http://172.29.11.2:8100"
+    - http://localhost:8100
+    - https://localhost
+    - http://192.168.0.92:8100
+    - http://172.29.11.2:8100
   allowed-methods:
-    - "GET"
-    - "POST"
-    - "PUT"
-    - "PATCH"
-    - "DELETE"
-    - "OPTIONS"
+    - GET
+    - POST
+    - PUT
+    - PATCH
+    - DELETE
+    - OPTIONS
   allowed-headers:
-    - "*"
+    - *
   allow-credentials: true
   exposed-headers:
-    - "Authorization"
+    - Authorization
   max-age: 3600
 
