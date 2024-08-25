@@ -75,7 +75,7 @@ security:
     permitAll:
       - /login/**
       - /oauth2/**
-      - /token/resend
+      - /token/resend/**
       - /actuator/**
    
 cors:
