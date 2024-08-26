@@ -99,4 +99,5 @@ cors:
   allow-credentials: true
   exposed-headers:
     - Authorization
+    - X-Redirect
   max-age: 3600
