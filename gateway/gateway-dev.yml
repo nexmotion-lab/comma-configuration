@@ -85,7 +85,7 @@ cors:
     - http://192.168.0.92:8100
     - http://172.29.11.2:8100
     - http://192.168.219.105:8100
-    - http://192.168.32.133:8100
+    - http://192.168.219.104:8100
     - capacitor://localhost
   allowed-methods:
     - GET
