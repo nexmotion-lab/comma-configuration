@@ -68,6 +68,7 @@ security:
       paths:
         - /api/psy/**
         - /api/diary/**
+        - /api/account/**
     admin:
       paths:
         - /api/admin/**
