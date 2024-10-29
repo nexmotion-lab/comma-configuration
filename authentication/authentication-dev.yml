@@ -25,7 +25,7 @@ logging:
 apple:
   key-id: ZSK96GC9H3
   team-id: NL527ZD88F
-  private-key-path: static/AuthKey_ZSK96GC9H3.p8
+  private-key-path: classpath:/static/AuthKey_ZSK96GC9H3.p8
 
 spring:
   security:
