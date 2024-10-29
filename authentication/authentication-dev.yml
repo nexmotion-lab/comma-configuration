@@ -9,9 +9,11 @@ jwt:
     
 logging:
   level:
-    org.springframework.security: DEBUG
+    org.springframework.security: TRACE
+    org.springframework.security.web: TRACE
+    org.springframework.security.oauth2: TRACE
+    org.springframework.security.config: TRACE
     org.springframework.web: DEBUG
-    javax.net.ssl: DEBUG
 
 apple:
   key-id: ZSK96GC9H3
