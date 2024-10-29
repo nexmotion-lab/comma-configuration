@@ -27,7 +27,7 @@ spring:
             client-id: comma.coders.com
             client-authentication-method: client_secret_post
             authorization-grant-type: authorization_code
-            redirect-uri: http://www.comma-coders.com:8998/login/oauth2/code/apple
+            redirect-uri: https://www.comma-coders.com:8998/login/oauth2/code/apple
             scope:
               - openid
               - email
