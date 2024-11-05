@@ -57,7 +57,7 @@ spring:
             client-name: Naver
 
           kakao:
-            client-id: accdfd64ac40ce117ae993c85eea47cc
+            client-id: 6e00d5ccf1eaf74ba9ff145b073e9bb2
             client-secret: Kl7k8Fhq1d1chsgK8Dj38g7iEu8CNi7T
             redirect-uri: https://www.comma-coders.com:8998/login/oauth2/code/kakao
             client-authentication-method: client_secret_post
